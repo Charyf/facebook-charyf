@@ -48,9 +48,13 @@ module FacebookCharyf
         validate
         @initialized = true
 
-        Facebook::Messenger::Subscriptions.subscribe(access_token: ENV['ACCESS_TOKEN'])
+        # Facebook::Messenger::Subscriptions.subscribe(access_token: ENV['ACCESS_TOKEN'])
+        # TODO - temporal error with FB platform - old API is not working
+        HTTParty.post 'https://graph.facebook.com/v2.9/me/subscribed_apps', query: { access_token: ENV["ACCESS_TOKEN"] }
+
 
         Facebook::Messenger::Bot.on :message do |message|
+
           # message.id          # => 'mid.1457764197618:41d102a3e1ae206a38'
           # message.sender      # => { 'id' => '1008372609250235' }
           # message.seq         # => 73
@@ -67,7 +71,7 @@ module FacebookCharyf
             message.mark_seen
 
             sender = message.sender['id']
-            request = Charyf::Engine::Request.new(self, sender)
+            request = Charyf::Engine::Request.new(self, sender, message.id)
 
             request.text = message.text
 
@@ -78,8 +82,8 @@ module FacebookCharyf
 
             return if repost?(message)
 
-            self.dispatcher.dispatch(request)
-          end
+            self.dispatcher.dispatch_async(request)
+          end.abort_on_exception = true
         end
 
       end
