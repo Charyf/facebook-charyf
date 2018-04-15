@@ -1,7 +1,7 @@
 require 'charyf'
 
 module Facebook
-  class Interface < Charyf::Interface::Base
+  module Interface
 
     module VERSION
       MAJOR = 0

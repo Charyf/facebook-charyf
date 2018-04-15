@@ -1,10 +1,10 @@
 # coding: utf-8
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "facebook/version"
+require "facebook/interface/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "facebook-charyf-interface"
+  spec.name          = "facebook-interface-charyf"
   spec.version       = Facebook::Interface::VERSION::STRING
   spec.authors       = ["Richard Ludvigh"]
   spec.email         = ["richard.ludvigh@gmail.com"]

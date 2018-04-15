@@ -1,0 +1,17 @@
+# It is recommended to set tokens inside environment
+# You need to setup following three tokens
+#
+# ENV['ACCESS_TOKEN'] = 'ACCESS_TOKEN'
+# ENV['APP_SECRET'] = 'APP_SECRET'
+# ENV['VERIFY_TOKEN'] = 'VERIFY_TOKEN'
+
+
+Facebook::Interface::Extension.configure do
+  # Port of the web interface for receiving web hooks
+  #
+  config.port = 30000
+
+  # Host - by default work on all network interfaces
+  #
+  config.host = '0.0.0.0'
+end
