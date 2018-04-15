@@ -1,7 +1,7 @@
 require 'charyf'
 require 'facebook/messenger'
 
-module FacebookCharyf
+module Facebook
   class Interface < Charyf::Interface::Base
 
     strategy_name :facebook

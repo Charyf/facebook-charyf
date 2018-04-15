@@ -1,9 +1,13 @@
 require 'charyf'
 
-require_relative 'facebook_charyf/interface'
+require_relative 'facebook/interface'
 
-module FacebookCharyf
+module Facebook
   class Extension < Charyf::Extension
+
+    generators do
+      require_relative 'facebook/generators/install/install_generator'
+    end
 
     configure do
       config.port = 30000

@@ -1,15 +1,15 @@
 # coding: utf-8
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "facebook_charyf/version"
+require "facebook/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "facebook-charyf"
-  spec.version       = FacebookCharyf::VERSION
+  spec.name          = "facebook-charyf-interface"
+  spec.version       = Facebook::Interface::VERSION::STRING
   spec.authors       = ["Richard Ludvigh"]
   spec.email         = ["richard.ludvigh@gmail.com"]
 
-  spec.summary       = 'Facebook interface for Charyf framework'
+  spec.summary       = 'Facebook interface for Charyf chatbot framework'
   spec.description   = spec.summary
   spec.homepage      = 'https://github.com/Charyf/facebook-charyf'
   spec.license       = "MIT"

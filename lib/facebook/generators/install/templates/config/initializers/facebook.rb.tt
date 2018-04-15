@@ -1,0 +1,8 @@
+WitAI::Charyf::Extension.configure do
+  # Set to you Wit.AI App API Key
+  # As charyf uses wit only to determine intent you can use
+  # either server or client key
+  #
+  # config.api_key = 'PUMSOASDDB43HCJ3OMBOXKEENOOS92WDI6'
+  # PS: The key above is made up :)
+end

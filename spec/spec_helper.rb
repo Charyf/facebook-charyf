@@ -1,5 +1,5 @@
 require "bundler/setup"
-require "facebook-charyf"
+require "facebook-interface-charyf"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
