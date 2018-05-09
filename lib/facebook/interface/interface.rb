@@ -11,7 +11,7 @@ module Facebook
 
       class << self
 
-        def reply(conversation_id, response)
+        def reply(conversation_id, message_id, response)
           Facebook::Messenger::Bot.deliver({
                                                recipient: {
                                                    id: conversation_id
